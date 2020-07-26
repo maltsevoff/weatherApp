@@ -21,8 +21,12 @@ class CustomTextView: UITextView {
 	
 	func getTextAndClean() -> String {
 		let str = text
-		text = ""
+		cleanText()
 		return str ?? ""
+	}
+	
+	func cleanText() {
+		text = ""
 	}
 
 }

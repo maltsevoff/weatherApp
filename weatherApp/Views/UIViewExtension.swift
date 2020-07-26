@@ -9,8 +9,8 @@
 import UIKit
 
 extension UIView {
-	func show() {
-		isHidden = false
+	func showOrHide() {
+		isHidden.toggle()
 	}
 	
 	func hide() {

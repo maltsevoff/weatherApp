@@ -40,8 +40,9 @@ class ViewController: UIViewController {
 	}
 	
 	private func showTextView() {
-		self.textView.show()
-		self.saveButton.show()
+		self.textView.showOrHide()
+		self.saveButton.showOrHide()
+		self.textView.cleanText()
 	}
 	
 	private func hideTextView() {
