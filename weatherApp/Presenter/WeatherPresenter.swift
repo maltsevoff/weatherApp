@@ -34,7 +34,9 @@ extension WeatherPresenter: CLLocationManagerDelegate {
 		case .authorizedAlways, .authorizedWhenInUse:
 			if let location = locationManager.location {
 				api.getWeatherFor(lat: location.coordinate.latitude,
-								  lon: location.coordinate.longitude, handler: {})
+								  lon: location.coordinate.longitude, handler: { locationWeather in
+									print(locationWeather)
+				})
 			}
 		default:
 			print("location is blocked")
