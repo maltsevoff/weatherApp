@@ -13,8 +13,12 @@ class ViewController: UIViewController {
 	@IBOutlet weak var cityNameLabel: UILabel!
 	@IBOutlet weak var countryNameLabel: UILabel!
 	@IBOutlet weak var temperatureLabel: UILabel!
+	@IBOutlet weak var textView: CustomTextView!
+	@IBOutlet weak var saveButton: SaveButton!
 	@IBAction func backgroundTapped(_ sender: UIButton) {
-		print("tapped")
+		showTextView()
+	}
+	@IBAction func saveButtonPressed(_ sender: SaveButton) {
 	}
 	
 	private let weatherPresenter = WeatherPresenter()
@@ -31,6 +35,11 @@ class ViewController: UIViewController {
 		self.countryNameLabel.text = locationWeather.country.name
 		let tempToShow = Int(locationWeather.temperature.real)
 		self.temperatureLabel.text = "\(tempToShow)°"
+	}
+	
+	private func showTextView() {
+		self.textView.show()
+		self.saveButton.show()
 	}
 }
 

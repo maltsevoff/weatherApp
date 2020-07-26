@@ -53,6 +53,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="It5-sw-KxC" customClass="SaveButton" customModule="weatherApp" customModuleProvider="target">
+                                <rect key="frame" x="157" y="242" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Sbe-Lu-Ihu"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Tvm-AG-HHG"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yGg-vg-Owk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -70,19 +81,23 @@
                             <constraint firstItem="e7k-yw-m1J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="e0h-J1-Ab9"/>
                             <constraint firstItem="Jdv-kS-5j0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="eeV-6W-LhG"/>
                             <constraint firstItem="Z93-W4-bje" firstAttribute="leading" secondItem="e7k-yw-m1J" secondAttribute="leading" id="ejh-L0-5To"/>
+                            <constraint firstItem="It5-sw-KxC" firstAttribute="centerX" secondItem="Jdv-kS-5j0" secondAttribute="centerX" id="pW8-1S-3RK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="e7k-yw-m1J" secondAttribute="trailing" constant="20" id="qZG-vC-xml"/>
                             <constraint firstItem="e7k-yw-m1J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rCc-nh-5GB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gsO-Ii-S6V" secondAttribute="trailing" constant="20" id="sb7-gm-NN3"/>
                             <constraint firstItem="71i-jO-EO2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tHb-Fg-8uo"/>
                             <constraint firstAttribute="bottom" secondItem="71i-jO-EO2" secondAttribute="bottom" id="u3j-Jc-3qd"/>
                             <constraint firstItem="gsO-Ii-S6V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="yBd-Ys-lmq"/>
+                            <constraint firstItem="It5-sw-KxC" firstAttribute="top" secondItem="Jdv-kS-5j0" secondAttribute="bottom" constant="8" id="yqc-ct-KgD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="cityNameLabel" destination="e7k-yw-m1J" id="Emy-XJ-aAk"/>
                         <outlet property="countryNameLabel" destination="Z93-W4-bje" id="ECw-Le-j8Q"/>
+                        <outlet property="saveButton" destination="It5-sw-KxC" id="BEo-yE-1he"/>
                         <outlet property="temperatureLabel" destination="gsO-Ii-S6V" id="qFc-aB-hON"/>
+                        <outlet property="textView" destination="Jdv-kS-5j0" id="b0t-Th-VUC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

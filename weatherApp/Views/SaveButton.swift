@@ -1,5 +1,5 @@
 //
-//  CustomTextInput.swift
+//  SaveButton.swift
 //  weatherApp
 //
 //  Created by Aleksandr Maltsev on 26.07.2020.
@@ -8,15 +8,21 @@
 
 import UIKit
 
-class CustomTextView: UITextView {
+class SaveButton: UIButton {
 	
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
 		
-		layer.cornerRadius = 10
-		layer.masksToBounds = true
-		backgroundColor = UIColor.lightGray.withAlphaComponent(0.8)
 		isHidden = true
+		configure()
+	}
+	
+	private func configure() {
+		backgroundColor = .black
+		setTitle("Save", for: .normal)
+		titleLabel?.textColor = .white
+		titleLabel?.textAlignment = .center
+		layer.cornerRadius = 10
 	}
 	
 	func show() {
