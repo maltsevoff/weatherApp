@@ -12,9 +12,14 @@ import CoreLocation
 class WeatherPresenter: NSObject {
 	
 	private let locationManager = CLLocationManager()
+	private let api = WeatherApiRequests()
 	
 	override init() {
 		super.init()
+		configureLocation()
+	}
+	
+	private func configureLocation() {
 		locationManager.requestAlwaysAuthorization()
 		locationManager.startUpdatingLocation()
 		locationManager.delegate = self
@@ -23,16 +28,14 @@ class WeatherPresenter: NSObject {
 }
 
 extension WeatherPresenter: CLLocationManagerDelegate {
-	func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-		if let location = locations.last {
-			print(location)
-		}
-	}
 	
 	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
 		switch status {
 		case .authorizedAlways, .authorizedWhenInUse:
-			print(locationManager.location)
+			if let location = locationManager.location {
+				api.getWeatherFor(lat: location.coordinate.latitude,
+								  lon: location.coordinate.longitude, handler: {})
+			}
 		default:
 			print("location is blocked")
 		}
