@@ -10,13 +10,32 @@ import UIKit
 
 class ViewController: UIViewController {
 	
+	@IBOutlet weak var cityNameLabel: UILabel!
+	@IBOutlet weak var countryNameLabel: UILabel!
+	@IBOutlet weak var temperatureLabel: UILabel!
+	
 	private let weatherPresenter = WeatherPresenter()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view.
+		
+		weatherPresenter.delegate = self
+		weatherPresenter.requestUserLocation()
 	}
 
+	private func setWeather(_ locationWeather: LocationWeather) {
+		self.cityNameLabel.text = locationWeather.name
+		self.countryNameLabel.text = locationWeather.country.name
+		let tempToShow = Int(locationWeather.temperature.real)
+		self.temperatureLabel.text = "\(tempToShow)°"
+	}
+}
 
+extension ViewController: WeatherPresenterDelegate {
+	func newLocationWeather(_ locationWeather: LocationWeather?) {
+		if let weather = locationWeather {
+			self.setWeather(weather)
+		}
+	}
 }
 

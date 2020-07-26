@@ -9,17 +9,22 @@
 import UIKit
 import CoreLocation
 
+protocol WeatherPresenterDelegate: class {
+	func newLocationWeather(_ locationWeather: LocationWeather?)
+}
+
 class WeatherPresenter: NSObject {
 	
 	private let locationManager = CLLocationManager()
 	private let api = WeatherApiRequests()
 	
+	weak var delegate: WeatherPresenterDelegate?
+	
 	override init() {
 		super.init()
-		configureLocation()
 	}
 	
-	private func configureLocation() {
+	func requestUserLocation() {
 		locationManager.requestAlwaysAuthorization()
 		locationManager.startUpdatingLocation()
 		locationManager.delegate = self
@@ -36,6 +41,9 @@ extension WeatherPresenter: CLLocationManagerDelegate {
 				api.getWeatherFor(lat: location.coordinate.latitude,
 								  lon: location.coordinate.longitude, handler: { locationWeather in
 									print(locationWeather)
+									DispatchQueue.main.async {
+										self.delegate?.newLocationWeather(locationWeather)
+									}
 				})
 			}
 		default:
