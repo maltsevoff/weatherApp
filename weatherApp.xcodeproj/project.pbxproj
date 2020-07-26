@@ -58,13 +58,45 @@
 			children = (
 				A6653A0124CD6E81008729EE /* AppDelegate.swift */,
 				A6653A0324CD6E81008729EE /* SceneDelegate.swift */,
-				A6653A0524CD6E81008729EE /* ViewController.swift */,
+				A6653A1824CD72C0008729EE /* Presenter */,
+				A6653A1724CD72B7008729EE /* Network */,
+				A6653A1624CD72AA008729EE /* Model */,
+				A6653A1524CD7299008729EE /* Views */,
 				A6653A0724CD6E81008729EE /* Main.storyboard */,
 				A6653A0A24CD6E84008729EE /* Assets.xcassets */,
 				A6653A0C24CD6E84008729EE /* LaunchScreen.storyboard */,
 				A6653A0F24CD6E84008729EE /* Info.plist */,
 			);
 			path = weatherApp;
+			sourceTree = "<group>";
+		};
+		A6653A1524CD7299008729EE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A6653A0524CD6E81008729EE /* ViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A6653A1624CD72AA008729EE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A6653A1724CD72B7008729EE /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A6653A1824CD72C0008729EE /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
