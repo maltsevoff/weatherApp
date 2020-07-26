@@ -47,6 +47,7 @@ class ViewController: UIViewController {
 		self.textView.hide()
 		self.saveButton.hide()
 		let text = self.textView.getTextAndClean()
+		view.endEditing(true)
 	}
 }
 
