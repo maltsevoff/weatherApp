@@ -11,7 +11,8 @@ import Foundation
 class WeatherApiRequests {
 	
 	private let apiKey = "ddf092ab637dc23d73d74119d5246879"
-	private let baseUrl = "https://api.openweathermap.org/data/2.5/weather"
+	private let host = "api.openweathermap.org"
+	private let weatherPath = "/data/2.5/weather"
 	
 	func getWeatherFor(lat: Double, lon: Double, handler: @escaping (LocationWeather?)->()) {
 		guard let url = urlFor(lat: lat, lon: lon) else {
@@ -29,15 +30,14 @@ class WeatherApiRequests {
 				handler(nil)
 			}
 		}
-		
 		task.resume()
 	}
 	
 	private func urlFor(lat: Double, lon: Double) -> URL? {
 		var components = URLComponents()
 		components.scheme = "https"
-		components.host = "api.openweathermap.org"
-		components.path = "/data/2.5/weather"
+		components.host = self.host
+		components.path = weatherPath
 		components.queryItems = [
 			URLQueryItem(name: "lat", value: "\(lat)"),
 			URLQueryItem(name: "lon", value: "\(lon)"),
