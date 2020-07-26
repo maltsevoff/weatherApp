@@ -15,6 +15,7 @@ class ViewController: UIViewController {
 	@IBOutlet weak var temperatureLabel: UILabel!
 	@IBOutlet weak var textView: CustomTextView!
 	@IBOutlet weak var saveButton: SaveButton!
+	@IBOutlet weak var noteLabel: UILabel!
 	@IBAction func backgroundTapped(_ sender: UIButton) {
 		showTextView()
 	}
@@ -28,7 +29,7 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 		
 		weatherPresenter.delegate = self
-		weatherPresenter.requestUserLocation()
+		weatherPresenter.start()
 	}
 
 	private func setWeather(_ locationWeather: LocationWeather) {
@@ -48,6 +49,7 @@ class ViewController: UIViewController {
 		self.saveButton.hide()
 		let text = self.textView.getTextAndClean()
 		view.endEditing(true)
+		self.weatherPresenter.updateNote(text)
 	}
 }
 
@@ -56,6 +58,10 @@ extension ViewController: WeatherPresenterDelegate {
 		if let weather = locationWeather {
 			self.setWeather(weather)
 		}
+	}
+	
+	func newNote(_ note: String?) {
+		noteLabel.text = note
 	}
 }
 

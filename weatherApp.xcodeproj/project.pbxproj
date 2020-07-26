@@ -21,6 +21,7 @@
 		A6653A2424CDFB29008729EE /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6653A2324CDFB28008729EE /* CustomTextView.swift */; };
 		A6653A2624CE042D008729EE /* SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6653A2524CE042D008729EE /* SaveButton.swift */; };
 		A6653A2824CE0665008729EE /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6653A2724CE0665008729EE /* UIViewExtension.swift */; };
+		A6653A2A24CE085A008729EE /* NotesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6653A2924CE085A008729EE /* NotesManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		A6653A2324CDFB28008729EE /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		A6653A2524CE042D008729EE /* SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButton.swift; sourceTree = "<group>"; };
 		A6653A2724CE0665008729EE /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		A6653A2924CE085A008729EE /* NotesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				A6653A1D24CDDAD6008729EE /* LocationWeather.swift */,
 				A6653A1F24CDDDCB008729EE /* Country.swift */,
 				A6653A2124CDDEA9008729EE /* Temperature.swift */,
+				A6653A2924CE085A008729EE /* NotesManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6653A2424CDFB29008729EE /* CustomTextView.swift in Sources */,
+				A6653A2A24CE085A008729EE /* NotesManager.swift in Sources */,
 				A6653A2024CDDDCB008729EE /* Country.swift in Sources */,
 				A6653A2824CE0665008729EE /* UIViewExtension.swift in Sources */,
 				A6653A0624CD6E81008729EE /* ViewController.swift in Sources */,

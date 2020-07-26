@@ -11,12 +11,14 @@ import CoreLocation
 
 protocol WeatherPresenterDelegate: class {
 	func newLocationWeather(_ locationWeather: LocationWeather?)
+	func newNote(_ note: String?)
 }
 
 class WeatherPresenter: NSObject {
 	
 	private let locationManager = CLLocationManager()
 	private let api = WeatherApiRequests()
+	private let noteManager = NotesManager()
 	
 	weak var delegate: WeatherPresenterDelegate?
 	
@@ -24,10 +26,29 @@ class WeatherPresenter: NSObject {
 		super.init()
 	}
 	
-	func requestUserLocation() {
+	func start() {
+		requestUserLocation()
+		fetchNote()
+	}
+	
+	private func requestUserLocation() {
 		locationManager.requestAlwaysAuthorization()
 		locationManager.startUpdatingLocation()
 		locationManager.delegate = self
+	}
+	
+	func updateNote(_ note: String?) {
+		saveNote(note)
+		fetchNote()
+	}
+	
+	private func saveNote(_ note: String?) {
+		self.noteManager.saveNote(note)
+	}
+	
+	private func fetchNote() {
+		let note = self.noteManager.fetchNote()
+		self.delegate?.newNote(note)
 	}
 	
 }
