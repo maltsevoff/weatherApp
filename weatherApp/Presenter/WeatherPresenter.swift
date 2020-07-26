@@ -61,7 +61,6 @@ extension WeatherPresenter: CLLocationManagerDelegate {
 			if let location = locationManager.location {
 				api.getWeatherFor(lat: location.coordinate.latitude,
 								  lon: location.coordinate.longitude, handler: { locationWeather in
-									print(locationWeather)
 									DispatchQueue.main.async {
 										self.delegate?.newLocationWeather(locationWeather)
 									}
