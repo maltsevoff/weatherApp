@@ -20,6 +20,7 @@
 		A6653A2224CDDEA9008729EE /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6653A2124CDDEA9008729EE /* Temperature.swift */; };
 		A6653A2424CDFB29008729EE /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6653A2324CDFB28008729EE /* CustomTextView.swift */; };
 		A6653A2624CE042D008729EE /* SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6653A2524CE042D008729EE /* SaveButton.swift */; };
+		A6653A2824CE0665008729EE /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6653A2724CE0665008729EE /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		A6653A2124CDDEA9008729EE /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
 		A6653A2324CDFB28008729EE /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		A6653A2524CE042D008729EE /* SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButton.swift; sourceTree = "<group>"; };
+		A6653A2724CE0665008729EE /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				A6653A0524CD6E81008729EE /* ViewController.swift */,
 				A6653A2324CDFB28008729EE /* CustomTextView.swift */,
 				A6653A2524CE042D008729EE /* SaveButton.swift */,
+				A6653A2724CE0665008729EE /* UIViewExtension.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			files = (
 				A6653A2424CDFB29008729EE /* CustomTextView.swift in Sources */,
 				A6653A2024CDDDCB008729EE /* Country.swift in Sources */,
+				A6653A2824CE0665008729EE /* UIViewExtension.swift in Sources */,
 				A6653A0624CD6E81008729EE /* ViewController.swift in Sources */,
 				A6653A2224CDDEA9008729EE /* Temperature.swift in Sources */,
 				A6653A2624CE042D008729EE /* SaveButton.swift in Sources */,

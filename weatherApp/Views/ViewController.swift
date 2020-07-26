@@ -19,6 +19,7 @@ class ViewController: UIViewController {
 		showTextView()
 	}
 	@IBAction func saveButtonPressed(_ sender: SaveButton) {
+		hideTextView()
 	}
 	
 	private let weatherPresenter = WeatherPresenter()
@@ -40,6 +41,12 @@ class ViewController: UIViewController {
 	private func showTextView() {
 		self.textView.show()
 		self.saveButton.show()
+	}
+	
+	private func hideTextView() {
+		self.textView.hide()
+		self.saveButton.hide()
+		let text = self.textView.getTextAndClean()
 	}
 }
 

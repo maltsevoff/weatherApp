@@ -19,7 +19,10 @@ class CustomTextView: UITextView {
 		isHidden = true
 	}
 	
-	func show() {
-		isHidden = false
+	func getTextAndClean() -> String {
+		let str = text
+		text = ""
+		return str ?? ""
 	}
+
 }

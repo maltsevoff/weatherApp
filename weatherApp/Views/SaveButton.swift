@@ -24,8 +24,4 @@ class SaveButton: UIButton {
 		titleLabel?.textAlignment = .center
 		layer.cornerRadius = 10
 	}
-	
-	func show() {
-		isHidden = false
-	}
 }
