@@ -13,6 +13,9 @@ class ViewController: UIViewController {
 	@IBOutlet weak var cityNameLabel: UILabel!
 	@IBOutlet weak var countryNameLabel: UILabel!
 	@IBOutlet weak var temperatureLabel: UILabel!
+	@IBAction func backgroundTapped(_ sender: UIButton) {
+		print("tapped")
+	}
 	
 	private let weatherPresenter = WeatherPresenter()
 

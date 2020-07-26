@@ -17,7 +17,14 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="71i-jO-EO2">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <gestureRecognizers/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZI-sA-BdQ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <connections>
+                                    <action selector="backgroundTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zlu-xD-vPK"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7k-yw-m1J">
                                 <rect key="frame" x="20" y="124" width="374" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
@@ -39,11 +46,15 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="vZI-sA-BdQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="0I2-Po-Usm"/>
                             <constraint firstItem="Z93-W4-bje" firstAttribute="top" secondItem="e7k-yw-m1J" secondAttribute="bottom" constant="10" id="2f2-Sj-NTd"/>
                             <constraint firstItem="71i-jO-EO2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="4kQ-3n-shr"/>
+                            <constraint firstItem="vZI-sA-BdQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9HW-YR-GeE"/>
                             <constraint firstItem="Z93-W4-bje" firstAttribute="trailing" secondItem="e7k-yw-m1J" secondAttribute="trailing" id="G1I-lw-jV0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gsO-Ii-S6V" secondAttribute="bottom" constant="20" id="HdN-X9-6yw"/>
+                            <constraint firstItem="vZI-sA-BdQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="M4M-4z-sLR"/>
                             <constraint firstItem="71i-jO-EO2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="MrF-0W-CSb"/>
+                            <constraint firstAttribute="bottom" secondItem="vZI-sA-BdQ" secondAttribute="bottom" id="WSF-FM-UcD"/>
                             <constraint firstItem="e7k-yw-m1J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="e0h-J1-Ab9"/>
                             <constraint firstItem="Z93-W4-bje" firstAttribute="leading" secondItem="e7k-yw-m1J" secondAttribute="leading" id="ejh-L0-5To"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="e7k-yw-m1J" secondAttribute="trailing" constant="20" id="qZG-vC-xml"/>
