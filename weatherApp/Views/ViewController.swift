@@ -22,6 +22,9 @@ class ViewController: UIViewController {
 	@IBAction func saveButtonPressed(_ sender: SaveButton) {
 		hideTextView()
 	}
+	@IBAction func settingsButtonPressed(_ sender: UIButton) {
+		showSettingsController()
+	}
 	
 	private let weatherPresenter = WeatherPresenter()
 
