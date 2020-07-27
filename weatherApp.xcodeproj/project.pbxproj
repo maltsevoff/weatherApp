@@ -22,6 +22,7 @@
 		A6653A2624CE042D008729EE /* SaveButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6653A2524CE042D008729EE /* SaveButton.swift */; };
 		A6653A2824CE0665008729EE /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6653A2724CE0665008729EE /* UIViewExtension.swift */; };
 		A6653A2A24CE085A008729EE /* NotesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6653A2924CE085A008729EE /* NotesManager.swift */; };
+		A6653A2C24CE148D008729EE /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6653A2B24CE148D008729EE /* SettingsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		A6653A2524CE042D008729EE /* SaveButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButton.swift; sourceTree = "<group>"; };
 		A6653A2724CE0665008729EE /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		A6653A2924CE085A008729EE /* NotesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesManager.swift; sourceTree = "<group>"; };
+		A6653A2B24CE148D008729EE /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				A6653A2324CDFB28008729EE /* CustomTextView.swift */,
 				A6653A2524CE042D008729EE /* SaveButton.swift */,
 				A6653A2724CE0665008729EE /* UIViewExtension.swift */,
+				A6653A2B24CE148D008729EE /* SettingsController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				A6653A0224CD6E81008729EE /* AppDelegate.swift in Sources */,
 				A6653A1E24CDDAD6008729EE /* LocationWeather.swift in Sources */,
 				A6653A1C24CDB048008729EE /* WeatherApiRequests.swift in Sources */,
+				A6653A2C24CE148D008729EE /* SettingsController.swift in Sources */,
 				A6653A0424CD6E81008729EE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

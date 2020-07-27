@@ -30,6 +30,7 @@ class ViewController: UIViewController {
 		
 		weatherPresenter.delegate = self
 		weatherPresenter.start()
+		navigationController?.navigationBar.isHidden = true
 	}
 
 	private func setWeather(_ locationWeather: LocationWeather) {
@@ -52,6 +53,30 @@ class ViewController: UIViewController {
 		view.endEditing(true)
 		self.weatherPresenter.updateNote(text)
 	}
+	
+	private func showSettingsController() {
+		let vc = storyboard?.instantiateViewController(identifier: SettingsController.identifier) as! SettingsController
+		navigationController?.pushViewController(vc, animated: true)
+	}
+	
+	private func showLocationAlert() {
+		let alertController = UIAlertController (title: "Title", message: "Please allow location access in settings.", preferredStyle: .alert)
+
+		let settingsAction = UIAlertAction(title: "Go to settings", style: .default) { _ in
+			guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+				return
+			}
+
+			if UIApplication.shared.canOpenURL(settingsUrl) {
+				UIApplication.shared.open(settingsUrl, completionHandler: nil)
+			}
+		}
+		let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+		alertController.addAction(settingsAction)
+		alertController.addAction(cancelAction)
+
+		present(alertController, animated: true, completion: nil)
+	}
 }
 
 extension ViewController: WeatherPresenterDelegate {
@@ -63,6 +88,10 @@ extension ViewController: WeatherPresenterDelegate {
 	
 	func newNote(_ note: String?) {
 		noteLabel.text = note
+	}
+	
+	func locationManagerDenide() {
+		showLocationAlert()
 	}
 }
 

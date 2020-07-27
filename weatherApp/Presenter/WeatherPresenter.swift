@@ -12,6 +12,7 @@ import CoreLocation
 protocol WeatherPresenterDelegate: class {
 	func newLocationWeather(_ locationWeather: LocationWeather?)
 	func newNote(_ note: String?)
+	func locationManagerDenide()
 }
 
 class WeatherPresenter: NSObject {
@@ -27,7 +28,7 @@ class WeatherPresenter: NSObject {
 	}
 	
 	func start() {
-		requestUserLocation()
+		checkLocation()
 		fetchNote()
 	}
 	
@@ -35,6 +36,17 @@ class WeatherPresenter: NSObject {
 		locationManager.requestAlwaysAuthorization()
 		locationManager.startUpdatingLocation()
 		locationManager.delegate = self
+	}
+	
+	private func checkLocation() {
+		if CLLocationManager.locationServicesEnabled() {
+			switch CLLocationManager.authorizationStatus() {
+			case .authorizedAlways, .authorizedWhenInUse:
+				requestWeather()
+			default:
+				requestUserLocation()
+			}
+		}
 	}
 	
 	func updateNote(_ note: String?) {
@@ -51,6 +63,21 @@ class WeatherPresenter: NSObject {
 		self.delegate?.newNote(note)
 	}
 	
+	private func locationIsDenied() {
+		self.delegate?.locationManagerDenide()
+	}
+	
+	private func requestWeather() {
+		if let location = locationManager.location {
+			api.getWeatherFor(lat: location.coordinate.latitude,
+							  lon: location.coordinate.longitude, handler: { locationWeather in
+								DispatchQueue.main.async {
+									self.delegate?.newLocationWeather(locationWeather)
+								}
+			})
+		}
+	}
+	
 }
 
 extension WeatherPresenter: CLLocationManagerDelegate {
@@ -58,16 +85,9 @@ extension WeatherPresenter: CLLocationManagerDelegate {
 	func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
 		switch status {
 		case .authorizedAlways, .authorizedWhenInUse:
-			if let location = locationManager.location {
-				api.getWeatherFor(lat: location.coordinate.latitude,
-								  lon: location.coordinate.longitude, handler: { locationWeather in
-									DispatchQueue.main.async {
-										self.delegate?.newLocationWeather(locationWeather)
-									}
-				})
-			}
+			requestWeather()
 		default:
-			print("location is blocked")
+			locationIsDenied()
 		}
 	}
 }
